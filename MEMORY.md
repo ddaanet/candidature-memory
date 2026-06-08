@@ -16,6 +16,7 @@ Dernière consolidation : 2026-04-03
 - [feedback_corpus_context.md](feedback_corpus_context.md) — Tout texte dans le contexte contamine la sortie
 - [feedback_clipboard.md](feedback_clipboard.md) — Pas de clipboard (xclip/pbcopy), /dev/tty bloqué
 - [feedback_no_stderr_redirect.md](feedback_no_stderr_redirect.md) — Jamais de 2>/dev/null sans justification documentée
+- [feedback_git_status_unsandboxed.md](feedback_git_status_unsandboxed.md) — git status toujours hors sandbox (artefacts .claude sandbox)
 - [feedback_replace_all.md](feedback_replace_all.md) — replace_all dangereux sur mots courts (sous-chaînes)
 - [feedback_annotations.md](feedback_annotations.md) — Annotations [état]/[outil:...] fuient dans les messages candidat
 - [feedback_notion_destructive.md](feedback_notion_destructive.md) — Énumérer toutes les entrées BDD avant DROP COLUMN

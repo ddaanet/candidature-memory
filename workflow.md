@@ -1,8 +1,11 @@
 ---
-name: Workflow git et build
-description: Conventions git (branches, commits, merge), build system, règles de prose
-type: reference
-updated: 2026-03-31
+name: workflow-git-et-build
+description: "Conventions git (branches, commits, merge), build system, règles de prose"
+metadata: 
+  node_type: memory
+  type: reference
+  updated: 2026-06-09
+  originSessionId: b19e2ea4-d774-477a-992f-f5ec25680661
 ---
 
 # Workflow git et build
@@ -24,6 +27,10 @@ Préfixe gitmoji. Courts et denses, centrés sur le "pourquoi". Table des emojis
 `SKILL.md` est le dispatcher à la racine. Le build copie SKILL.md avec substitution de `__VERSION__`. Le script `build/build.sh` produit deux artefacts dans `dist/`. Seul `candidature.skill` est releasé.
 
 `./build/build.sh --bump minor` : incrémente VERSION, commite, tague, release GitHub.
+
+## Handoffs versionnés
+
+`.claude/handoff-task.md` est versionné (commité avec le travail en cours) : gitlore fournit le contexte qui le rend utile à travers les sessions. `.claude/handoff-session` est gitignoré, c'est un pointeur transitoire vers le transcript de session.
 
 ## Qualité de prose (règles de contamination)
 

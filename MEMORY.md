@@ -25,7 +25,8 @@ Dernière consolidation : 2026-04-03
 - [feedback_playwright_not_mcp.md](feedback_playwright_not_mcp.md) — Couche navigateur via scripts Playwright Bash, pas le MCP
 - [project_cc_plugin_migration.md](project_cc_plugin_migration.md) — Spec plugin Claude Code approuvée 2026-04-24, cible v0.5.0
 - [project_super_sdd_cached.md](project_super_sdd_cached.md) — Plugin de réutilisation d'agents SDD, éval A/B en cours sur le plan candidature
-- [project_linkedin_walker.md](project_linkedin_walker.md) — Parcours de cartes LinkedIn, spec et plan prêts sur dev (2026-06-09)
+- [project_linkedin_walker.md](project_linkedin_walker.md) — Parcours de cartes LinkedIn (FR-3) implémenté et vérifié sur dev (2026-06-09)
+- [feedback_harness_sandbox.md](feedback_harness_sandbox.md) — Harnais navigateur et Notion REST hors sandbox (isolation PID/réseau du serveur)
 - [feedback_12factor.md](feedback_12factor.md) — Boucles agentiques selon 12-factor-agents, flux de contrôle dans le code
 - [user_blog.md](user_blog.md) — Blog ddaa.net, contenu technique, sociologie des choix tech
 

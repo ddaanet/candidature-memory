@@ -22,14 +22,22 @@ navigateur scaffoldée Playwright, scripts incrémentaux ; (5) entrée
 ajoutée dans `ddaanet/claude-plugins/.claude-plugin/marketplace.json`
 à chaque release.
 
-How to apply: Plan d'implémentation écrit le 2026-06-10 dans
-`docs/superpowers/plans/2026-06-10-plugin-claude-code.md` (dix tâches,
-commit 119b810 sur dev). La couche navigateur (spec §5) y est
-réconciliée avec le harnais réel `tools/linkedin-harness/` plutôt que
-suivie à la lettre. Prochaine étape = exécution (subagent-driven
-recommandé). Les tâches qui touchent src/SKILL.md, src/references/*.md
-et DESIGN.md exigent une session Opus. Le triage d'offres en masse et
-les scripts Playwright réutilisables sont hors périmètre v1.
+How to apply: Plan implémenté inline le 2026-06-10 sur dev (neuf
+commits, e36352d..30a7c06, plus 55b54a5 dans claude-plugins pour
+l'entrée marketplace). Source canonique sous src/, préprocesseur awk
+build/preprocess.awk, build à deux cibles (skills/candidature versionné
+pour Claude Code, dist/candidature.skill pour Claude.ai), garde-fou de
+dérive dans check.sh (vert). La couche navigateur (spec §5) est
+réconciliée avec le harnais réel tools/linkedin-harness/. Écart au plan
+corrigé : la boucle de références internes de check.sh teste l'existence
+sous src/ (les refs markdown restent runtime-relatives). Reste à faire,
+manuel et hors sandbox : merge dev vers main en --no-ff puis
+./build/build.sh --bump minor pour cuter v0.5.0 et synchroniser la
+version de l'entrée marketplace (0.5.0 y est déjà inscrit, VERSION
+encore à 0.4.0 jusqu'au bump). Les tâches qui touchent src/SKILL.md,
+src/references/*.md et DESIGN.md exigent une session Opus. Le triage
+d'offres en masse et les scripts Playwright réutilisables sont hors
+périmètre v1.
 
 Note : le plan porte la date 2026-06-10, pas 2026-04-24 comme le
 référence [[project_super_sdd_cached]]. Ce pointeur d'éval A/B est à

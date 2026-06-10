@@ -22,6 +22,15 @@ navigateur scaffoldée Playwright, scripts incrémentaux ; (5) entrée
 ajoutée dans `ddaanet/claude-plugins/.claude-plugin/marketplace.json`
 à chaque release.
 
-How to apply: Prochaine étape = writing-plans pour détailler
-l'implémentation. Le triage d'offres en masse et les scripts Playwright
-réutilisables sont hors périmètre v1.
+How to apply: Plan d'implémentation écrit le 2026-06-10 dans
+`docs/superpowers/plans/2026-06-10-plugin-claude-code.md` (dix tâches,
+commit 119b810 sur dev). La couche navigateur (spec §5) y est
+réconciliée avec le harnais réel `tools/linkedin-harness/` plutôt que
+suivie à la lettre. Prochaine étape = exécution (subagent-driven
+recommandé). Les tâches qui touchent src/SKILL.md, src/references/*.md
+et DESIGN.md exigent une session Opus. Le triage d'offres en masse et
+les scripts Playwright réutilisables sont hors périmètre v1.
+
+Note : le plan porte la date 2026-06-10, pas 2026-04-24 comme le
+référence [[project_super_sdd_cached]]. Ce pointeur d'éval A/B est à
+corriger quand l'éval reprend.

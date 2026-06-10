@@ -22,6 +22,8 @@ Un commit unique peut aller directement sur `main`.
 
 Préfixe gitmoji. Courts et denses, centrés sur le "pourquoi". Table des emojis dans CLAUDE.md.
 
+Le hook commit-msg réécrit les préfixes conventionnels (`fix:`, `feat:`...) en emoji. Donc rédiger les commits normaux avec un préfixe conventionnel et laisser le hook poser l'emoji. Les commits de merge `--no-ff` portent un emoji littéral 🔀 que le hook rejette : les committer avec `--no-verify`.
+
 ## Build
 
 `SKILL.md` est le dispatcher à la racine. Le build copie SKILL.md avec substitution de `__VERSION__`. Le script `build/build.sh` produit deux artefacts dans `dist/`. Seul `candidature.skill` est releasé.

@@ -15,9 +15,17 @@ Claude Code est notamment motivée par la levée de la limite de tours
 pour le triage d'offres, tâche où les scripts sont naturels. L'usage
 d'un MCP pour un pattern scripté répétitif est un surcoût.
 
-How to apply: Quand on conçoit ou étend la couche navigateur
-(references/site-ouverture-playwright.md, scripts/playwright-*.py), on
-rédige en termes de "produire un script, l'exécuter via Bash, lire la
-sortie, itérer". Pas d'appels MCP Playwright dans les instructions de
-la cible Claude Code. Le fichier `references/site-ouverture.md` reste
-MCP pour la cible Claude.ai seulement.
+How to apply: la couche est réalisée. Le harnais LinkedIn vit dans
+tools/linkedin-harness/ (Node, playwright-core, pas de navigateur bundlé).
+Pour les autres sites, écrire un script .mjs ad hoc dans tmp/, l'exécuter
+hors sandbox, lire stdout et les captures, itérer. Importer playwright-core
+en export par défaut (module CommonJS, `import pkg from '.../playwright-core';
+const { chromium } = pkg`), puis connectOverCDP sur http://127.0.0.1:9222.
+Lancer le chromium visible via tools/linkedin-harness/launch.sh (profil
+persistant, port CDP, écran :0), qui réutilise la session ouverte. Un
+lancement en tête par le launcher Playwright échoue (Missing X server) même
+avec DISPLAY=:0, passer par launch.sh. Pour une simple lecture, un chromium
+headless avec executablePath /usr/bin/chromium suffit. Les pages rendues en
+JavaScript (Gem) demandent d'attendre l'apparition du contenu, pas seulement
+networkidle. references/site-ouverture.md reste MCP pour la cible Claude.ai
+seulement. Voir DESIGN D-35.

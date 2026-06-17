@@ -13,6 +13,7 @@ Dernière consolidation : 2026-06-16
 - [feedback_notion_skills.md](feedback_notion_skills.md) — Skills Notion vs MCP brut (limite : candidature Claude Code utilise MCP)
 - [feedback_notion_nav.md](feedback_notion_nav.md) — Naviguer depuis CLAUDE.md Notion, pas notion-search
 - [feedback_notion_subagent.md](feedback_notion_subagent.md) — Déléguer les opérations Notion à un sous-agent
+- [notion_reorder_technique.md](notion_reorder_technique.md) — Réordonner des sous-pages Notion par réécriture en petits groupes (le MCP ne déplace pas dans le parent)
 - [feedback_oqlf.md](feedback_oqlf.md) — OQLF comme arbitre des anglicismes + table des termes tranchés
 - [feedback_corpus_context.md](feedback_corpus_context.md) — Tout texte dans le contexte contamine la sortie
 - [feedback_clipboard.md](feedback_clipboard.md) — Pas de clipboard (xclip/pbcopy), /dev/tty bloqué

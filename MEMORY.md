@@ -22,6 +22,7 @@ Dernière consolidation : 2026-06-16
 - [feedback_annotations.md](feedback_annotations.md) — Annotations [état]/[outil:...] fuient dans les messages candidat
 - [feedback_notion_destructive.md](feedback_notion_destructive.md) — Énumérer toutes les entrées BDD avant DROP COLUMN
 - [feedback_review_before_commit.md](feedback_review_before_commit.md) — Relire DESIGN.md et vérifier cohérence avant tout commit
+- [feedback_tdd_batch.md](feedback_tdd_batch.md) — TDD batch pour le scaffolding trivial, rouge-vert strict pour la vraie logique
 - [feedback_reuse_agents.md](feedback_reuse_agents.md) — SendMessage vers un agent existant plutôt que relancer un nouveau
 - [feedback_playwright_not_mcp.md](feedback_playwright_not_mcp.md) — Couche navigateur via harnais Playwright local + CDP, pas le MCP
 - [feedback_claude_ai_camisole.md](feedback_claude_ai_camisole.md) — Compatibilité claude.ai = carcan dépassé, ne pas la réflexe-préserver

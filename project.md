@@ -4,7 +4,7 @@ description: "Repo, version, contraintes de modèle, historique des refontes"
 metadata: 
   node_type: memory
   type: reference
-  updated: 2026-06-16
+  updated: 2026-06-19
   originSessionId: 764ce0df-fef6-4621-a228-4383cd716188
 ---
 
@@ -30,3 +30,4 @@ SKILL.md, DESIGN.md, references/*.md : modifications uniquement en session Opus.
 - 2026-06-09 : harnais LinkedIn Playwright livré (`tools/linkedin-harness/`, Node + playwright-core, chromium à profil persistant et port CDP).
 - 2026-06 : release v0.5.0, migration vers plugin Claude Code. Source unique `src/`, artefacts `skills/candidature/` et `.claude-plugin/plugin.json` générés et versionnés, préprocesseur awk à blocs target, `check.sh` garde-fou de dérive.
 - 2026-06-16 : flux formulaire-driven étendu, étape Axes retirée de la préparation, axes alignés chez leurs consommateurs (DESIGN D-37). Résidu pré-Notion `suivi-retours.md` supprimé, replié dans `suivi.md`.
+- 2026-06-19 : Phase 2 du pivot conçue et planifiée. Décision tranchée : le skill abandonne la cible claude.ai et Notion, devient un plugin Claude Code pur, stockage en fichiers locaux du repo Emploi ancré sur cwd, sentinelle `.candidature` versionnée, validateur de métadonnées. Renverse D-25 (Notion requis) et l'universalité NFR-1. Spec `docs/superpowers/specs/2026-06-19-phase2-pivot-plugin-fichiers-design.md`. Découpé en trois plans : A outillage (`init_repo.py`, `validate.py`, plan écrit et en cours d'exécution subagent-driven), B réécriture du skill (Opus), C harnais LinkedIn. Voir [[feedback_claude_ai_camisole]].

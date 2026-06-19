@@ -38,4 +38,18 @@ enrichie (plugins Claude Code, guardrails, gitlore). L'ancienne version est
 archivée dans `Ancien/David Allouche CV en 2026-06-14.docx`. Le `.pages` et le
 FR ne sont pas mis à jour. Le PDF EN a été régénéré depuis le docx.
 
+Promotion 2026-06-17 : corps EN enrichi (Intuition : « large Python platform
+(200 klocs) with reusable libraries » ; Canonical : « Launchpad, a distributed
+Python developer-collaboration platform, code review and CI »). Tient toujours
+sur une page. PDF EN régénéré. `.pages` et FR non mis à jour.
+
+Le répertoire `/Users/david/code/Emploi/cv/` est désormais un dépôt git qui
+versionne l'**expansion XML** des docx (dossiers `cv-en/`, `cv-fr/`), pas les
+docx en binaire. Les docx sont en `.gitignore` ; PDF, `.pages`, diplômes sont
+versionnés en blob. Une version par commit (historique linéaire pour `cv-en/`).
+Éditer via le skill `document-skills:docx` : unpack vers `cv-en/`, Edit du XML,
+`pack.py` vers le docx. Convertir en PDF hors sandbox (soffice a besoin du pipe)
+avec un profil isolé sous `tmp/`, et vérifier `pdffonts` (HelveticaNeue +
+CenturyGothic, pas NotoSerif).
+
 Voir [[feedback_scope.md]] pour le périmètre.

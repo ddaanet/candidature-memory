@@ -22,6 +22,10 @@ Un commit unique peut aller directement sur `main`.
 
 Préfixe gitmoji. Courts et denses, centrés sur le "pourquoi". Table des emojis dans CLAUDE.md.
 
+Le hook commit-msg (`.git/hooks/gitmoji.sh` + `gitmoji.cfg`, non versionnés) n'accepte que 13 préfixes conventionnels qu'il réécrit en emoji : feat ✨, fix 🐛, docs 📝, style 🎨, refactor ♻️, perf ⚡️, test ✅, build 📦️, ci 👷, chore 🔧, revert ⏪️, hotfix 🚑️, release 🔖. Un message qui commence déjà par un de ces emoji passe tel quel. Tout le reste est rejeté, y compris 🔀 et 💡 que la table de CLAUDE.md liste pourtant. Le hook lit `$2` comme source-type pour sauter les merges, mais commit-msg ne reçoit pas ce second argument, donc même un commit de merge doit utiliser un préfixe ou emoji accepté (un merge de livrable se fait en ✨/feat, pas 🔀). Le repo Emploi a le même hook (le plan supposait à tort qu'il n'en avait pas).
+
+Quirk sandbox : pendant un merge ou un changement de branche, l'écriture de `.claude/settings.json` échoue avec « Device or resource busy ». Lancer ces opérations git unsandboxed.
+
 ## Build
 
 Source unique `src/` (SKILL.md, references/, scripts/, plugin.json.tmpl). `./build/build.sh` produit deux cibles via le préprocesseur awk (`build/preprocess.awk`, blocs `<!-- target: claude-ai|claude-code -->`, substitution `{{VERSION}}`).

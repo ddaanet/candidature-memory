@@ -7,7 +7,7 @@ Dernière consolidation : 2026-06-16
 ## Index
 
 - [project.md](project.md) — Repo, contraintes de modèle, historique (Phase 2 pivot livré sur main, plugin Claude Code pur, fichiers locaux, v0.5.1)
-- [workflow.md](workflow.md) — Conventions git, build (source src/ → skills/ + .skill), check.sh, règles de prose
+- [workflow.md](workflow.md) — Conventions git, build mono-cible (src/ → skills/), release via just release, check.sh, règles de prose
 - [integrations.md](integrations.md) — Notion MCP, CLAUDE.md comme ancrage, passation sous projet, remote git SSH
 - [feedback_scope.md](feedback_scope.md) — Ce repo = skill uniquement, pas la recherche d'emploi
 - [feedback_notion_skills.md](feedback_notion_skills.md) — Skills Notion vs MCP brut (limite : candidature Claude Code utilise MCP)

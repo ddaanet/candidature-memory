@@ -28,13 +28,11 @@ Quirk sandbox : pendant un merge ou un changement de branche, l'écriture de `.c
 
 ## Build
 
-Source unique `src/` (SKILL.md, references/, scripts/, plugin.json.tmpl). `./build/build.sh` produit deux cibles via le préprocesseur awk (`build/preprocess.awk`, blocs `<!-- target: claude-ai|claude-code -->`, substitution `{{VERSION}}`).
+Source unique `src/` (SKILL.md, references/, scripts/). `./build/build.sh` assemble une seule cible, le plugin Claude Code `skills/candidature/`, via le préprocesseur awk (`build/preprocess.awk`, substitution `{{VERSION}}`). La version est lue depuis `.claude-plugin/plugin.json`, la source de vérité. Le build ne génère plus le manifeste et ne tague plus. La cible claude.ai (`dist/*.skill`) est abandonnée, les fichiers restants sous `dist/` sont des reliques que le build ne reproduit plus.
 
-Cible plugin Claude Code : `skills/candidature/` et `.claude-plugin/plugin.json`, générés et versionnés, lus tels quels depuis le cache plugin (pas de build au checkout). Cible Claude.ai : `dist/candidature.skill`, zip non versionné, seul artefact releasé. `dist/candidature-dev.skill` est le stub dev.
+`skills/candidature/` est versionné et lu tel quel depuis le cache plugin (pas de build au checkout). Toujours éditer `src/`, jamais l'artefact. Après édition, reconstruire et committer src plus skills ensemble, sinon `check.sh` échoue sur la dérive. Le manifeste `plugin.json` est une source éditée à la main, hors garde de dérive, mais son champ version est verrouillé par un hook version-guard : seul `just release` le bumpe.
 
-Toujours éditer `src/`, jamais les artefacts `skills/`. Après édition, reconstruire et committer src plus skills ensemble, sinon `check.sh` échoue sur la dérive.
-
-`./build/build.sh --bump minor` : incrémente VERSION, commite, tague, release GitHub (candidature.skill seul).
+Release via le toolkit `plugin-dev` (vendu en subtree, importé dans le `justfile`) : `just release {patch|minor|major}` reconstruit, vérifie via `just precommit`, bumpe la version, commite, tague, pousse, crée la release GitHub, puis répercute la version dans la marketplace `claude-plugins`.
 
 ## Qualité de prose (règles de contamination)
 

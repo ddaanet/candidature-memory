@@ -16,6 +16,7 @@ Dernière consolidation : 2026-06-16
 - [notion_reorder_technique.md](notion_reorder_technique.md) — Réordonner des sous-pages Notion par réécriture en petits groupes (le MCP ne déplace pas dans le parent)
 - [feedback_oqlf.md](feedback_oqlf.md) — OQLF comme arbitre des anglicismes + table des termes tranchés
 - [feedback_corpus_context.md](feedback_corpus_context.md) — Tout texte dans le contexte contamine la sortie
+- [feedback_tool_neutral_prose.md](feedback_tool_neutral_prose.md) — Contenu du skill en prose tool-neutre, pas de jargon claude.ai (bash_tool, view, web_search)
 - [feedback_clipboard.md](feedback_clipboard.md) — Pas de clipboard (xclip/pbcopy), /dev/tty bloqué
 - [feedback_no_stderr_redirect.md](feedback_no_stderr_redirect.md) — Jamais de 2>/dev/null sans justification documentée
 - [feedback_sandbox_git_branch_ops.md](feedback_sandbox_git_branch_ops.md) — Ops git de branche écrivant un fichier deny-sandbox : « Device or resource busy », lancer sandbox off

@@ -30,6 +30,7 @@ Dernière consolidation : 2026-06-16
 - [feedback_claude_ai_camisole.md](feedback_claude_ai_camisole.md) — Compatibilité claude.ai = carcan dépassé, ne pas la réflexe-préserver
 - [project_cc_plugin_migration.md](project_cc_plugin_migration.md) — Migration plugin Claude Code livrée en v0.5.0
 - [project_super_sdd_cached.md](project_super_sdd_cached.md) — Plugin de réutilisation d'agents SDD, éval A/B en cours sur le plan candidature
+- [project_emploi_usage_findings.md](project_emploi_usage_findings.md) — Retours d'usage Emploi : sentinelle absente, refus migrés sans canal/date, statut en texte libre
 - [user_blog.md](user_blog.md) — Blog ddaa.net, contenu technique, sociologie des choix tech
 
 ## Faits clés en un coup d'œil

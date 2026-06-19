@@ -10,7 +10,7 @@ metadata:
 
 # Projet candidature
 
-Un skill de candidature assistée. Le contenu markdown est le produit. Public cible : non technique. Livré en deux cibles depuis une source unique `src/` : un plugin Claude Code (`skills/candidature/`, généré et versionné) et un `.skill` Claude.ai (`dist/`, releasé). Voir [[project_cc_plugin_migration]].
+Un skill de candidature assistée. Le contenu markdown est le produit. Public cible : non technique. Plugin Claude Code pur (`skills/candidature/`), buildé depuis une source unique `src/`. `.claude-plugin/plugin.json` est la source de vérité de la version, éditée à la main (plus générée). L'ancienne double cible claude.ai + Claude Code et le stockage Notion sont abandonnés depuis le pivot Phase 2 du 2026-06-19. Voir [[project_cc_plugin_migration]].
 
 Repo GitHub public : https://github.com/ddaanet/candidature
 Remote SSH : `git@github.com:ddaanet/candidature.git`
@@ -31,3 +31,4 @@ SKILL.md, DESIGN.md, references/*.md : modifications uniquement en session Opus.
 - 2026-06 : release v0.5.0, migration vers plugin Claude Code. Source unique `src/`, artefacts `skills/candidature/` et `.claude-plugin/plugin.json` générés et versionnés, préprocesseur awk à blocs target, `check.sh` garde-fou de dérive.
 - 2026-06-16 : flux formulaire-driven étendu, étape Axes retirée de la préparation, axes alignés chez leurs consommateurs (DESIGN D-37). Résidu pré-Notion `suivi-retours.md` supprimé, replié dans `suivi.md`.
 - 2026-06-19 : Phase 2 du pivot conçue et planifiée. Décision tranchée : le skill abandonne la cible claude.ai et Notion, devient un plugin Claude Code pur, stockage en fichiers locaux du repo Emploi ancré sur cwd, sentinelle `.candidature` versionnée, validateur de métadonnées. Renverse D-25 (Notion requis) et l'universalité NFR-1. Spec `docs/superpowers/specs/2026-06-19-phase2-pivot-plugin-fichiers-design.md`. Découpé en trois plans : A outillage (`init_repo.py`, `validate.py`, plan écrit et en cours d'exécution subagent-driven), B réécriture du skill (Opus), C harnais LinkedIn. Voir [[feedback_claude_ai_camisole]].
+- 2026-06-19 : Phase 2 (plans A et B) livrée. Migration build/release vers le toolkit `plugin-dev` (subtree), `plugin.json` source de vérité, hook version-guard, VERSION et `plugin.json.tmpl` supprimés. Deux revues Opus finales sans Critical, D-40 (harnais LinkedIn, Plan C) accepté hors périmètre, fixes de cohérence DESIGN.md. Merge dev vers main `--no-ff` (2e77bc3, le hook gitmoji n'ayant pas de 🔀 : prefix `feat` réécrit en ✨). Version 0.5.1. Plan C (bascule du harnais LinkedIn vers les fichiers) reste à faire. Findings Minor reportés (arbre README, double renvoi playwright, noms d'outils legacy) à traiter en session suivante.

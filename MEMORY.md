@@ -6,7 +6,7 @@ Dernière consolidation : 2026-06-16
 
 ## Index
 
-- [project.md](project.md) — Repo, contraintes de modèle, historique (Phase 2 pivot livré sur main, plugin Claude Code pur, fichiers locaux, v0.5.1)
+- [project.md](project.md) — Repo, contraintes de modèle, historique (plugin Claude Code pur, fichiers locaux, reducer de contrôle de flux 12FA D-46, v0.7.0)
 - [workflow.md](workflow.md) — Conventions git, build mono-cible (src/ → skills/), release via just release, check.sh, règles de prose
 - [integrations.md](integrations.md) — Notion MCP, CLAUDE.md comme ancrage, passation sous projet, remote git SSH
 - [feedback_scope.md](feedback_scope.md) — Ce repo = skill uniquement, pas la recherche d'emploi
@@ -40,5 +40,5 @@ Repo : https://github.com/ddaanet/candidature (public, SSH)
 Notion MCP : actif, auth via claude.ai (pas de clé API locale)
 Config Notion : page CLAUDE.md dans Notion (330ec6ce-9801-81e4-a49f-de2583fef716) + `CLAUDE.local.md` (exclu du git)
 Modèle requis pour SKILL.md / DESIGN.md / references : Opus uniquement
-Version courante : 0.5.1 (plugin Claude Code pur `skills/candidature/`, stockage fichiers locaux, source unique `src/`). Pivot Phase 2 livré sur main (2e77bc3). Notion et cible claude.ai abandonnés
+Version courante : 0.7.0 (plugin Claude Code pur `skills/candidature/`, stockage fichiers locaux, source unique `src/`). Contrôle de flux dans un reducer Python embarqué `src/scripts/dispatch.py` (D-46), pas dans l'inférence de l'agent. Notion et cible claude.ai abandonnés. Harnais de dev uv + pytest (`.venv`/`uv.lock` non versionnés), tests via `.venv/bin/pytest`
 Édition du skill : modifier `src/`, jamais les artefacts `skills/`. Reconstruire (`./build/build.sh`) et committer, sinon `check.sh` signale la dérive

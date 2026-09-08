@@ -12,11 +12,9 @@ metadata:
 
 ## Branches
 
-`main` : livrables uniquement, pas de brouillons.
-`dev` : travail en cours, explorations, plans.
+Développement directement sur `main` depuis le 2026-09-08. La branche `dev` est abandonnée, plus de merge de livraison, historique linéaire. Auparavant `main` ne recevait que des livrables et `dev` portait le travail en cours.
 
-Merge `dev` → `main` en `--no-ff` pour les livrables de plus d'un commit, avec message rédigé (pas le message par défaut).
-Un commit unique peut aller directement sur `main`.
+Une branche ad hoc reste possible pour un travail long qui casserait `main` entre deux étapes, refermée en `--no-ff` avec message rédigé.
 
 ## Messages de commit
 

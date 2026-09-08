@@ -28,16 +28,16 @@ Quirk sandbox : pendant un merge ou un changement de branche, l'écriture de `.c
 
 ## Build
 
-Source unique `src/` (SKILL.md, references/, scripts/). `./build/build.sh` assemble une seule cible, le plugin Claude Code `skills/candidature/`, via le préprocesseur awk (`build/preprocess.awk`, substitution `{{VERSION}}`). La version est lue depuis `.claude-plugin/plugin.json`, la source de vérité. Le build ne génère plus le manifeste et ne tague plus. La cible claude.ai (`dist/*.skill`) est abandonnée, les fichiers restants sous `dist/` sont des reliques que le build ne reproduit plus.
+Source unique `src/` (SKILL.md, references/, scripts/). `./build/build.sh` assemble une seule cible, le plugin Claude Code `skills/candidature/`. C'est une copie pure : le préprocesseur awk et la substitution `{{VERSION}}` ont été supprimés le 2026-09-08, l'artefact ne porte plus de numéro de version parce qu'il dérivait à chaque release. La version vit dans `.claude-plugin/plugin.json`, la source de vérité. Le build ne génère plus le manifeste et ne tague plus. La cible claude.ai (`dist/*.skill`) est abandonnée, les fichiers restants sous `dist/` sont des reliques que le build ne reproduit plus.
 
 `skills/candidature/` est versionné et lu tel quel depuis le cache plugin (pas de build au checkout). Toujours éditer `src/`, jamais l'artefact. Après édition, reconstruire et committer src plus skills ensemble, sinon `check.sh` échoue sur la dérive. Le manifeste `plugin.json` est une source éditée à la main, hors garde de dérive, mais son champ version est verrouillé par un hook version-guard : seul `just release` le bumpe.
 
 Release via le toolkit `plugin-dev` (vendu en subtree, importé dans le `justfile`) : `just release {patch|minor|major}` reconstruit, vérifie via `just precommit`, bumpe la version, commite, tague, pousse, crée la release GitHub, puis répercute la version dans la marketplace `claude-plugins`.
 
-Exécution réelle : la recette exige d'être sur `main`, un arbre propre, `plugin.json` égal au dernier tag, et un dépôt marketplace propre (`MARKETPLACE_DIR` dans `.envrc`, pointe sur `/Users/david/code/claude-plugins`). Elle demande une confirmation interactive via `read`, qui ne fonctionne pas dans Claude Code : passer `--yes` en second argument (`just release minor --yes`). Push et `gh` exigent le réseau hors sandbox. Après release, `main` porte le commit de bump que `dev` n'a pas : fast-forward `dev` sur `main` et pousser, sinon les branches divergent et le `plugin.json` de `dev` reste sur l'ancienne version.
+Exécution réelle : la recette exige d'être sur `main`, un arbre propre, `plugin.json` égal au dernier tag, et un dépôt marketplace propre (`MARKETPLACE_DIR` dans `.envrc`, pointe sur `/Users/david/code/claude-plugins`). Depuis plugin-dev 0.3.0 elle ne demande plus de confirmation interactive, l'argument `--yes` a disparu. Push et `gh` exigent le réseau hors sandbox. Après release, `main` porte le commit de bump que `dev` n'a pas : fast-forward `dev` sur `main` et pousser, sinon les branches divergent et le `plugin.json` de `dev` reste sur l'ancienne version.
 
 ## Qualité de prose (règles de contamination)
 
 Tout le contenu du skill suit ces règles (violations = contamination du style de sortie). Pas de gras markdown. Pas de tirets cadratins ni demi-cadratins. Pas de fragments à puces sans sujet. Pas de points-virgules. Contenu en français naturel, anglicismes vérifiés via OQLF.
 
-`check.sh` vérifie automatiquement la contamination de style, le préprocesseur, les références internes, le build, et la dérive des artefacts versionnés par rapport à `src/`.
+`check.sh` vérifie automatiquement la contamination de style, les références internes, le build, et la dérive des artefacts versionnés par rapport à `src/`.

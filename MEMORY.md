@@ -8,12 +8,8 @@ Dernière consolidation : 2026-06-16
 
 - [project.md](project.md) — Repo, contraintes de modèle, historique (plugin Claude Code pur, fichiers locaux, reducer de contrôle de flux 12FA D-46, v0.7.0)
 - [workflow.md](workflow.md) — Conventions git, build mono-cible (src/ → skills/), release via just release, check.sh, règles de prose
-- [integrations.md](integrations.md) — Notion MCP, CLAUDE.md comme ancrage, passation sous projet, remote git SSH
-- [feedback_scope.md](feedback_scope.md) — Ce repo = skill uniquement, pas la recherche d'emploi
-- [feedback_notion_skills.md](feedback_notion_skills.md) — Skills Notion vs MCP brut (limite : candidature Claude Code utilise MCP)
-- [feedback_notion_nav.md](feedback_notion_nav.md) — Naviguer depuis CLAUDE.md Notion, pas notion-search
-- [feedback_notion_subagent.md](feedback_notion_subagent.md) — Déléguer les opérations Notion à un sous-agent
-- [notion_reorder_technique.md](notion_reorder_technique.md) — Réordonner des sous-pages Notion par réécriture en petits groupes (le MCP ne déplace pas dans le parent)
+- [integrations.md](integrations.md) — Remote git SSH, contenu du .gitignore
+- [feedback_scope.md](feedback_scope.md) — Ce repo = skill uniquement, la recherche d'emploi vit dans le repo Emploi
 - [feedback_oqlf.md](feedback_oqlf.md) — OQLF comme arbitre des anglicismes + table des termes tranchés
 - [feedback_corpus_context.md](feedback_corpus_context.md) — Tout texte dans le contexte contamine la sortie
 - [feedback_tool_neutral_prose.md](feedback_tool_neutral_prose.md) — Contenu du skill en prose tool-neutre, pas de jargon claude.ai (bash_tool, view, web_search)
@@ -23,7 +19,6 @@ Dernière consolidation : 2026-06-16
 - [feedback_sandbox_git_branch_ops.md](feedback_sandbox_git_branch_ops.md) — Ops git de branche écrivant un fichier deny-sandbox : « Device or resource busy », lancer sandbox off
 - [feedback_replace_all.md](feedback_replace_all.md) — replace_all dangereux sur mots courts (sous-chaînes)
 - [feedback_annotations.md](feedback_annotations.md) — Annotations [état]/[outil:...] fuient dans les messages candidat
-- [feedback_notion_destructive.md](feedback_notion_destructive.md) — Énumérer toutes les entrées BDD avant DROP COLUMN
 - [feedback_review_before_commit.md](feedback_review_before_commit.md) — Relire DESIGN.md et vérifier cohérence avant tout commit
 - [feedback_tdd_batch.md](feedback_tdd_batch.md) — TDD batch pour le scaffolding trivial, rouge-vert strict pour la vraie logique
 - [feedback_reuse_agents.md](feedback_reuse_agents.md) — SendMessage vers un agent existant plutôt que relancer un nouveau
@@ -37,8 +32,6 @@ Dernière consolidation : 2026-06-16
 ## Faits clés en un coup d'œil
 
 Repo : https://github.com/ddaanet/candidature (public, SSH)
-Notion MCP : actif, auth via claude.ai (pas de clé API locale)
-Config Notion : page CLAUDE.md dans Notion (330ec6ce-9801-81e4-a49f-de2583fef716) + `CLAUDE.local.md` (exclu du git)
 Modèle requis pour SKILL.md / DESIGN.md / references : Opus uniquement
-Version courante : 0.7.0 (plugin Claude Code pur `skills/candidature/`, stockage fichiers locaux, source unique `src/`). Contrôle de flux dans un reducer Python embarqué `src/scripts/dispatch.py` (D-46), pas dans l'inférence de l'agent. Notion et cible claude.ai abandonnés. Harnais de dev uv + pytest (`.venv`/`uv.lock` non versionnés), tests via `.venv/bin/pytest`
+Version courante : 0.8.0 (plugin Claude Code pur `skills/candidature/`, stockage fichiers locaux, source unique `src/`). Contrôle de flux dans un reducer Python embarqué `src/scripts/dispatch.py` (D-46), pas dans l'inférence de l'agent. Notion et cible claude.ai abandonnés. Harnais de dev uv + pytest (`.venv`/`uv.lock` non versionnés), tests via `.venv/bin/pytest`
 Édition du skill : modifier `src/`, jamais les artefacts `skills/`. Reconstruire (`./build/build.sh`) et committer, sinon `check.sh` signale la dérive

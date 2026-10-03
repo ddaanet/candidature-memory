@@ -4,7 +4,7 @@ description: Ne jamais commiter sans avoir relu DESIGN.md et vérifié la cohér
 type: feedback
 ---
 
-Ne pas commiter sans revue. Avant de proposer un commit, relire DESIGN.md et vérifier que les changements sont cohérents avec les décisions documentées. Les correctifs Notion ne sont pas une spécification suffisante : ils décrivent le quoi, DESIGN.md documente le pourquoi.
+Ne pas commiter sans revue. Avant de proposer un commit, relire DESIGN.md et vérifier que les changements sont cohérents avec les décisions documentées. Les correctifs (`Emploi/correctifs.md`) ne sont pas une spécification suffisante : ils décrivent le quoi, DESIGN.md documente le pourquoi.
 
 **Why:** L'utilisateur a constaté que les patches ont été appliqués mécaniquement depuis les correctifs sans vérifier la cohérence avec l'architecture documentée.
 

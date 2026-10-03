@@ -1,6 +1,6 @@
 ---
 name: feedback-harness-sandbox
-description: Les commandes du harnais navigateur et les appels Notion REST doivent tourner hors sandbox sur le serveur
+description: Les commandes du harnais navigateur doivent tourner hors sandbox sur le serveur
 metadata: 
   node_type: memory
   type: feedback
@@ -8,12 +8,11 @@ metadata:
 ---
 
 Sur le serveur DigitalOcean, lancer les commandes du harnais LinkedIn qui
-attachent le navigateur (sonde, walk.mjs) et les appels REST Notion avec
-`dangerouslyDisableSandbox: true`.
+attachent le navigateur (sonde, walk.mjs) avec `dangerouslyDisableSandbox: true`.
 
 Why: Le sandbox des commandes Bash est isolé en espace de noms PID et réseau. Il
 ne voit que quelques processus, jamais le chromium du serveur, et ne joint pas
-`127.0.0.1:9222` ni `api.notion.com`. Le navigateur n'est pas lancé par
+`127.0.0.1:9222`. Le navigateur n'est pas lancé par
 `launch.sh` mais par le service systemd utilisateur `chromium-playwright`
 (DISPLAY :99, CDP 127.0.0.1:9222, profil `~/.config/chromium-playwright`), qui
 dépend de KasmVNC. Provisionné par ansible (`devddaanet`, tags browser et vnc).

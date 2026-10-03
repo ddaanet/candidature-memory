@@ -1,11 +1,11 @@
 ---
 name: scope du projet candidature
-description: Le repo candidature concerne uniquement le skill (code/contenu). La recherche d'emploi est un projet Notion séparé.
+description: "Ce repo = skill uniquement, la recherche d'emploi vit dans le repo Emploi"
 type: feedback
 ---
 
 Le projet candidature = le skill uniquement (SKILL.md, references/, build, DESIGN.md, scripts/).
-La recherche d'offres, le suivi des candidatures, les relances = projet "recherche d'emploi" (séparé, dans Notion).
+La recherche d'offres, le suivi des candidatures, les relances = projet "recherche d'emploi", porté par le repo Emploi (`../Emploi`).
 
 **Why:** David a corrigé quand j'ai proposé "recherche d'offres" et "suivi candidatures" comme tâches de ce repo.
 

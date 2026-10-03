@@ -32,7 +32,7 @@ Source unique `src/` (SKILL.md, references/, scripts/). `./build/build.sh` assem
 
 Release via le toolkit `plugin-dev` (vendu en subtree, importé dans le `justfile`) : `just release {patch|minor|major}` reconstruit, vérifie via `just precommit`, bumpe la version, commite, tague, pousse, crée la release GitHub, puis répercute la version dans la marketplace `claude-plugins`.
 
-Exécution réelle : la recette exige d'être sur `main`, un arbre propre, `plugin.json` égal au dernier tag, et un dépôt marketplace propre (`MARKETPLACE_DIR` dans `.envrc`, pointe sur `/Users/david/code/claude-plugins`). Depuis plugin-dev 0.3.0 elle ne demande plus de confirmation interactive, l'argument `--yes` a disparu. Push et `gh` exigent le réseau hors sandbox. Après release, `main` porte le commit de bump que `dev` n'a pas : fast-forward `dev` sur `main` et pousser, sinon les branches divergent et le `plugin.json` de `dev` reste sur l'ancienne version.
+Exécution réelle : la recette exige d'être sur `main`, un arbre propre, `plugin.json` égal au dernier tag, et un dépôt marketplace propre (`MARKETPLACE_DIR` dans `.envrc`, pointe sur `/Users/david/code/claude-plugins`). Depuis plugin-dev 0.3.0 elle ne demande plus de confirmation interactive, l'argument `--yes` a disparu. Push et `gh` exigent le réseau hors sandbox.
 
 ## Qualité de prose (règles de contamination)
 

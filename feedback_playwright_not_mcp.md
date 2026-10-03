@@ -27,5 +27,5 @@ lancement en tête par le launcher Playwright échoue (Missing X server) même
 avec DISPLAY=:0, passer par launch.sh. Pour une simple lecture, un chromium
 headless avec executablePath /usr/bin/chromium suffit. Les pages rendues en
 JavaScript (Gem) demandent d'attendre l'apparition du contenu, pas seulement
-networkidle. references/site-ouverture.md reste MCP pour la cible Claude.ai
-seulement. Voir DESIGN D-35.
+networkidle. Playwright est la seule couche navigateur du skill, il n'y a
+pas de couche par extension Chrome. Voir DESIGN D-35.

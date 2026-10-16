@@ -8,7 +8,7 @@ Dernière consolidation : 2026-06-16
 
 - [project.md](project.md) — Repo, contraintes de modèle, historique (plugin Claude Code pur, fichiers locaux, reducer de contrôle de flux 12FA D-46, v0.7.0)
 - [workflow.md](workflow.md) — Conventions git, build mono-cible (src/ → skills/), release via just release, check.sh, règles de prose
-- [integrations.md](integrations.md) — Remote git SSH, contenu du .gitignore
+- [integrations.md](integrations.md) — Remote git SSH, `.gitmodules` url https vs SSH, `Permission denied (publickey)` à `/plugin install`, candidature-memory public, contenu du .gitignore
 - [feedback_scope.md](feedback_scope.md) — Ce repo = skill uniquement, la recherche d'emploi vit dans le repo Emploi
 - [feedback_oqlf.md](feedback_oqlf.md) — OQLF comme arbitre des anglicismes + table des termes tranchés
 - [feedback_corpus_context.md](feedback_corpus_context.md) — Tout texte dans le contexte contamine la sortie
